@@ -4,9 +4,21 @@ Project Overview
 
 This project aims to predict the price of Bitcoin using historical price data. By employing linear regression, a fundamental machine learning technique, we attempt to forecast future prices based on past trends. The project demonstrates the application of data preprocessing, linear regression modeling, performance evaluation, and visualization of the results.
 
+Limitations: 
+
+Simple linear regression is a very basic model that assumes a linear relationship between the independent and dependent variables. If the actual relationship is not linear or if there are other influencing factors not accounted for by the model (which is likely the case with Bitcoin prices, affected by market sentiment, regulatory news, etc.), the model's predictions can be significantly off. This is seen in my Mean Squared Error (MSE) value.
+
+The linear regression line extends slightly into negative values for money at the start. This is caused again by the volatile nature of cryptocurrencies. Having these naunce stagnations and sudden flucuations make extrapolating data increasingly difficult, making our line extend into unrealistic values. This is especially true if the slope of the regression line is negative or if the line's intercept with the Y-axis (when X=0) is negative.
+
+
 Data
 
 The dataset contains historical Bitcoin prices, including daily open, high, low, close prices, volume, and percentage change. The primary focus is on the closing price, which serves as the target variable for our predictions.
+
+Axes: 
+X axis: the days since the start of the dataset (July 18, 2010)
+Y axis: The price of Bitcoin in US dollars
+
 
 Methodology
 
@@ -34,4 +46,7 @@ How to Use
 Clone the repository.
 Install required Python packages: pandas, numpy, sklearn, matplotlib.
 Run the Jupyter notebook or Python script to preprocess data, train the model, and visualize the results.
+
+
+
 
